@@ -1,0 +1,5 @@
+https://angular.dev/guide
+
+https://material.angular.io/
+
+https://fonts.google.com/icons
