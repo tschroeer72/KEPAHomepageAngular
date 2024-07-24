@@ -5,7 +5,6 @@
   "projects": {
     "KEPAHomepageAngular": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -35,7 +34,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -98,13 +97,18 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "cli": {

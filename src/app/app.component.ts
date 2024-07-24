@@ -11,7 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
   standalone: true,
   imports: [DatePipe, RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'Kegelgruppe KEPA 1958';

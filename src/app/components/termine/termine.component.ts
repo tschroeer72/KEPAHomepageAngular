@@ -16,7 +16,7 @@ import { generateEvents, createEventId } from './termine-util';
   imports: [CommonModule, FullCalendarModule],
   providers: [provideNativeDateAdapter()],
   templateUrl: './termine.component.html',
-  styleUrl: './termine.component.css'
+  styleUrl: './termine.component.scss'
 })
 export class TermineComponent  {
   //  calendarOptions: CalendarOptions = {
