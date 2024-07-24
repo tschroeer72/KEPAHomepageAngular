@@ -1,1 +1,22 @@
-<p>termine works!</p>
+<div class=" justify-content-center"> 
+    <h3>Termine</h3>
+    <p>Im Kalender findest Du alle Termine des laufenden Jahres</p>
+    <div>
+        <full-calendar class="cal" [options]="calendarOptions()">
+            <ng-template #eventContent let-arg>
+                <b>{{ arg.timeText }}</b>
+                <i>{{ arg.event.title }}</i>
+              </ng-template>
+        </full-calendar>
+    </div>
+
+    <!-- <div>
+        <h2>All Events ({{currentEvents().length}})</h2>
+        <ul>
+          <li *ngFor='let event of currentEvents()'>
+            <b>{{event.startStr}}</b>
+            <i>{{event.title}}</i>
+          </li>
+        </ul>
+    </div> -->
+</div>  

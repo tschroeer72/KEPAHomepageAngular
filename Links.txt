@@ -3,3 +3,10 @@ https://angular.dev/guide
 https://material.angular.io/
 
 https://fonts.google.com/icons
+
+https://ng-bootstrap.github.io/
+
+https://tailwindcss.com/docs/guides/angular
+
+https://www.npmjs.com/package/@fullcalendar/angular  <=>  https://fullcalendar.io/docs/angular
+

@@ -1,23 +1,41 @@
-<mat-toolbar>
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menü">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/home">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
-    <button mat-menu-item routerLink="/aktuelles">
-      <mat-icon>newspaper</mat-icon>
-      <span>Aktuelles</span>
-    </button>
-    <button mat-menu-item routerLink="/termine">
-      <mat-icon>calendar_month</mat-icon>
-      <span>Termine</span>
-    </button>
-  </mat-menu>
-  <span>{{title}}</span>
-</mat-toolbar>
-<div class="container-fluid-md mx-auto">
-  <router-outlet></router-outlet>
+<div class="container text-center" style="height: 100vh;">
+  <div class="row " style="height: 5vh;">
+      <mat-toolbar>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menü">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+          <button mat-menu-item routerLink="/aktuelles">
+            <mat-icon>newspaper</mat-icon>
+            <span>Aktuelles</span>
+          </button>
+          <button mat-menu-item routerLink="/termine">
+            <mat-icon>calendar_month</mat-icon>
+            <span>Termine</span>
+          </button>
+          <button mat-menu-item routerLink="/impressum">
+            <mat-icon>info</mat-icon>
+            <span>Impressum</span>
+          </button>
+        </mat-menu> -->
+        <span>{{title}}</span>
+        <span class="spacer"></span>
+          <a mat-button routerLink="/home">Home</a>
+          <a mat-button routerLink="/aktuelles">Aktuelles</a>
+          <a mat-button routerLink="/termine">Termine</a>
+          <a mat-button routerLink="/impressum">Impressum</a>    
+      </mat-toolbar>
+  </div>
+  <div class="row" style="height: 90vh;">
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  <div class="row" style="height: 5vh;">
+    <span>Copyright © {{ currentDate | date:'yyyy' }} by Thorsten Schröer <a routerLink="/impressum" class="mx-1">Impressum</a> </span>
+  </div>
 </div>
