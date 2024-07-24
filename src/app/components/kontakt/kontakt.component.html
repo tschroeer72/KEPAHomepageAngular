@@ -1,0 +1,48 @@
+<h3>Kontaktformular</h3>
+<form class="form-group ">
+    <div class="row justify-content-start">
+        <div class="col align-self-start">
+            <mat-form-field class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"  placeholder="Name">
+                @if (nameFormControl.hasError('required')) {
+                    <mat-error>Name wird <strong>benötigt</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div class="col align-self-center">
+            <mat-form-field class="full-width">
+                <mat-label>Telefon</mat-label>
+                <input matInput placeholder="Telefon">
+            </mat-form-field>
+        </div>
+        <div class="col align-self-end">
+            <mat-form-field class="full-width">
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Bsp. pat@example.com">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                    <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (emailFormControl.hasError('required')) {
+                    <mat-error>Email wird <strong>benötigt</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field class="full-width">
+                <mat-label>Nachricht</mat-label>
+                <textarea matInput matInput [formControl]="nachrichtFormControl" [errorStateMatcher]="matcher" ></textarea>
+                @if (nachrichtFormControl.hasError('required')) {
+                    <mat-error>Nachricht wird <strong>benötigt</strong></mat-error>
+                }
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col align-self-start">
+            <button mat-flat-button style="width: 200px;">Email abschicken</button>
+        </div>
+    </div>
+</form>

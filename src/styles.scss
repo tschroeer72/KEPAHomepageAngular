@@ -18,13 +18,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow: auto;
     padding-top: 50px; 
     /* margin: 20px; */
-  }
+}
 
 /* app.component */
 .spacer {
     flex: 1 1 auto;
 }
-/*termine.component*/
+
+/* termine.component */
 .cal {
     height: 70vh;
-  }
+}
+
+/* kontakt.component */
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
