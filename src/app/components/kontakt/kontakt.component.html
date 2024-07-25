@@ -1,24 +1,24 @@
 <h3>Kontaktformular</h3>
-<form class="form-group ">
+<!-- <form novalidate (ngSubmit)="sendEmail(form.value)" #form="ngForm">
     <div class="row justify-content-start">
-        <div class="col align-self-start">
+        <div class="form-group col align-self-start">
             <mat-form-field class="full-width">
                 <mat-label>Name</mat-label>
-                <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"  placeholder="Name">
+                <input matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher" name="Name" #name placeholder="Name">
                 @if (nameFormControl.hasError('required')) {
                     <mat-error>Name wird <strong>benötigt</strong></mat-error>
                 }
             </mat-form-field>
         </div>
-        <div class="col align-self-center">
+        <div class="form-group col align-self-center">
             <mat-form-field class="full-width">
                 <mat-label>Telefon</mat-label>
-                <input matInput placeholder="Telefon">
+                <input matInput name="Telefon" #telefon placeholder="Telefon">
             </mat-form-field>
         </div>
-        <div class="col align-self-end">
+        <div class="form-group col align-self-end">
             <mat-form-field class="full-width">
-                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Bsp. pat@example.com">
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" name="Email" #email placeholder="Bsp. pat@example.com">
                 <mat-hint>Errors appear instantly!</mat-hint>
                 @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                     <mat-error>Please enter a valid email address</mat-error>
@@ -30,10 +30,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="form-group col-12">
             <mat-form-field class="full-width">
                 <mat-label>Nachricht</mat-label>
-                <textarea matInput matInput [formControl]="nachrichtFormControl" [errorStateMatcher]="matcher" ></textarea>
+                <textarea matInput matInput [formControl]="nachrichtFormControl" [errorStateMatcher]="matcher" name="Nachricht" #nachricht ></textarea>
                 @if (nachrichtFormControl.hasError('required')) {
                     <mat-error>Nachricht wird <strong>benötigt</strong></mat-error>
                 }
@@ -42,7 +42,44 @@
     </div>
     <div class="row">
         <div class="col align-self-start">
-            <button mat-flat-button style="width: 200px;">Email abschicken</button>
+            <button type="submit" mat-flat-button style="width: 200px;">Email abschicken</button>
+        </div>
+    </div>
+</form> -->
+
+<form novalidate (ngSubmit)="sendEmail(form.value)" #form="ngForm">
+    <div class="row justify-content-start">
+        <div class="form-group col align-self-start">
+            <mat-form-field class="full-width">
+                <mat-label>Name</mat-label>
+                <input class="form-control" matInput name="Name" #name ngModel required placeholder="Name">
+            </mat-form-field>
+        </div>
+        <div class="form-group col align-self-center">
+            <mat-form-field class="full-width">
+                <mat-label>Telefon</mat-label>
+                <input class="form-control" matInput name="Telefon" #telefon ngModel placeholder="Telefon">
+            </mat-form-field>
+        </div>
+        <div class="form-group col align-self-end">
+            <mat-form-field class="full-width">
+                <input class="form-control" type="email" matInput name="Email" ngModel required #email placeholder="Bsp. pat@example.com">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-12">
+            <mat-form-field class="full-width">
+                <mat-label>Nachricht</mat-label>
+                <textarea class="form-control" matInput name="Nachricht" ngModel required #nachricht ></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col align-self-start">
+            <button type="submit" mat-flat-button style="width: 200px;">
+                <a href='mailto:t.schroeer@web.de?subject=Testmail%20von%20Angular&body={{getMailBody(form.value)}}'>Email absenden</a>
+            </button>
         </div>
     </div>
 </form>

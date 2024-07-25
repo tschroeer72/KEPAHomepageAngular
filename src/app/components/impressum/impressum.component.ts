@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './impressum.component.scss'
 })
 export class ImpressumComponent {
-
+  emailWebmaster = 'webmaster@kegelgruppe-kepa.de';
 }
