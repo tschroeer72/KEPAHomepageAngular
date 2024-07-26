@@ -12,3 +12,6 @@ https://tailwindcss.com/docs/guides/angular
 
 https://www.npmjs.com/package/@fullcalendar/angular  <=>  https://fullcalendar.io/docs/angular
 
+https://github.com/ganatan/angular-react-lazy-loading
+
+https://angular.dev/guide/ngmodules/lazy-loading
