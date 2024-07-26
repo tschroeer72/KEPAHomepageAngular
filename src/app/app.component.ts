@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
@@ -16,4 +16,11 @@ import {MatMenuModule} from '@angular/material/menu';
 export class AppComponent {
   title = 'Kegelgruppe KEPA 1958';
   currentDate = new Date();
+  @Output() changeTheme = new EventEmitter();
+  @Input() isDarkMode = false;
+
+  
+  switchTheme() {
+    this.changeTheme.emit();
+  }
 }

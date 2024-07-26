@@ -1,0 +1,98 @@
+@use "@angular/material" as mat;
+
+// Include the default theme
+@include mat.core();
+
+// Colors
+$white: #fff;
+$black: #000;
+$dark-grey: #444;
+$light-grey: #a0a1a2;
+$transparent-grey: #35353557;
+$grey: #808080;
+$cool-blue: #008cff;
+
+//linear-gradients
+$linear-green: linear-gradient(90deg, #d3d3d3 -20%, #00a656 100%);
+$linear-blue: linear-gradient(90deg, #d3d3d3 -20%, #3fa7d6 100%);
+$linear-red: linear-gradient(90deg, #d3d3d3 -20%, #ee6352 100%);
+$linear-yellow: linear-gradient(90deg, #d3d3d3 -20%, #fac05e 100%);
+
+
+$grid: #808080;
+
+// Define a custom light color palette
+$light-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 800);
+$light-accent: mat.m2-define-palette(mat.$m2-yellow-palette, 700, 600, 800);
+$light-theme: mat.m2-define-light-theme((color: (primary: $light-primary,
+        accent: $light-accent,
+      ),
+    ));
+
+// Define a custom dark color palette
+$dark-primary: mat.m2-define-palette(mat.$m2-amber-palette, 700, 500, 900);
+$dark-accent: mat.m2-define-palette(mat.$m2-blue-palette, 500, 300, 700);
+$dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+      ),
+    ));
+
+// Apply the custom light theme to all components
+.theme-light {
+    @include mat.all-component-themes($light-theme);
+  
+    header {
+      border-bottom: 2px solid #303030;
+    }
+  
+    footer {
+      border-top: 2px solid #303030;
+    }
+  
+    mat-icon {
+      color: mat.m2-get-color-from-palette($dark-primary, "500-contrast");
+    }
+  
+    a {
+      text-decoration: none;
+      color: mat.m2-get-color-from-palette($dark-primary, "500-contrast");
+    }
+  
+  }
+  
+  // Apply the custom dark theme to all components
+.theme-dark {
+    @include mat.all-component-colors($dark-theme);
+  
+    .mat-sidenav-container {
+      background: #141414;
+    }
+  
+    .mat-mdc-card:not(.pop-up) {
+      background: #4242423a;
+    }
+  
+    header,
+    footer {
+      background: #424242;
+      color: mat.m2-get-color-from-palette($dark-accent, "500-contrast");
+    }
+  
+    header {
+      border-bottom: 2px solid #f3f3f3;
+    }
+  
+    footer {
+      border-top: 2px solid #f3f3f3;
+    }
+  
+    mat-icon {
+      color: mat.m2-get-color-from-palette($dark-accent, "500-contrast");
+    }
+  
+    a {
+      text-decoration: none;
+      color: mat.m2-get-color-from-palette($dark-accent, "500-contrast");
+    }
+  
+  }

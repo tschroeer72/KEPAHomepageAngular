@@ -7,11 +7,12 @@ import { ImpressumComponent } from './components/impressum/impressum.component';
 import { KontaktComponent } from './components/kontakt/kontakt.component';
 
 export const routes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'aktuelles', component: AktuellesComponent },
     { path: 'termine', component: TermineComponent },
     { path: 'kontakt', component: KontaktComponent },
     { path: 'impressum', component: ImpressumComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];

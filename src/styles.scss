@@ -5,8 +5,11 @@
 // @import "roboto-fontface/css/roboto/sass/roboto-fontface";
 
 /* for npm material-icons package (to load local files) */
-//  $material-icons-font-path: 'node_modules/material-icons/iconfont/';
-// @import 'material-icons/iconfont/material-icons.scss'; *
+// $material-icons-font-path: '../node_modules/material-icons/iconfont/';
+// @import '../node_modules/material-icons/iconfont/material-icons.scss'; 
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./theme.scss";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

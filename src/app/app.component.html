@@ -28,15 +28,22 @@
           <a mat-button routerLink="/aktuelles">Aktuelles</a>
           <a mat-button routerLink="/termine">Termine</a>
           <a mat-button routerLink="/kontakt">Kontakt</a>
-          <a mat-button routerLink="/impressum">Impressum</a>    
+          <a mat-button routerLink="/impressum">Impressum</a>  
+          <button mat-icon-button (click)="switchTheme()" title="Theme">
+            @if (isDarkMode) {
+              <mat-icon>brightness_4</mat-icon>
+            } @else {
+              <mat-icon>brightness_high</mat-icon>
+            }
+          </button>  
       </mat-toolbar>
   </div>
-  <div class="row" style="height: 90vh;">
+  <div class="row" > <!-- style="height: 90vh;" -->
     <main class="content">
       <router-outlet></router-outlet>
     </main>
   </div>
-  <div class="row" style="height: 5vh;">
+  <div class="row mt-5" style="height: 5vh;">
     <span>Copyright © {{ currentDate | date:'yyyy' }} by Thorsten Schröer <a routerLink="/impressum" class="mx-1">Impressum</a> </span>
   </div>
 </div>
